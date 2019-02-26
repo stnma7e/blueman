@@ -232,6 +232,9 @@ gatt_appearance_categories = {
 
 
 def get_major_class(klass):
+    if not klass or klass == "unknown":
+        return "unknown"
+    
     index = (klass >> 8) & 0x1F
 
     if index > 8:
